@@ -1,0 +1,109 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+body, p, h1, h2, h3, h4, h5, h6, ion-title, b, button, span, ion-segment-button, label, a, ion-input, ion-select, small, ion-label{
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight:500;
+}
+body{
+    color: #222;
+}
+
+:root {
+  --primary-color: #f75671;
+  --primary-dark-color: #ea3c59;
+}
+
+ion-title{
+    position: initial;
+}
+.PlanModal{
+	--background:none !important;
+}
+.hourlyPopup{
+	--max-height:80vh;
+	--background:none;
+    display: flex;
+    align-items: flex-end;
+
+    .modal-wrapper{
+    	&:after{
+    		content:"";
+    		background:#fff;
+    		position: fixed;
+    		bottom:0;
+    		left: 0;
+    		right: 0;
+    		height: 400px; 
+    		z-index: -1;
+    	}
+    }
+}
+[footer]{
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    bottom:0;
+}
+.dailyPopup{
+	--max-height:90vh;
+	--background:none;
+    display: flex;
+    align-items: flex-end;
+
+    .modal-wrapper{
+    	&:after{
+    		content:"";
+    		background:#fff;
+    		position: fixed;
+    		bottom:0;
+    		left: 0;
+    		right: 0;
+    		height: 400px; 
+    		z-index: -1;
+    	}
+    }
+}
+.searchPage{
+    ion-content, .modal-wrapper{
+        --background: none;
+    }
+}
+[backBtn]{
+    --box-shadow: none !important;
+}
+.sc-ion-alert-ios .alert-checkbox-icon.sc-ion-alert-ios{
+    border-color: var(--primary-color) !important;
+    background-color: transparent !important;
+}
+.sc-ion-alert-ios[aria-checked="true"] .alert-checkbox-icon.sc-ion-alert-ios{
+    background-color: var(--primary-color) !important;
+}
+.alert-button.sc-ion-alert-ios{
+    color: var(--primary-color) !important;
+}

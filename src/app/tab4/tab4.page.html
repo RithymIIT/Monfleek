@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <div headerFlex>
+      <ion-menu-button
+        ><div sideToggle><span></span><span></span><span></span></div
+      ></ion-menu-button>
+      <ion-title>Profile</ion-title>
+      <a href="javascript:void(0)" headIcon
+        ><ion-icon name="log-out-outline"></ion-icon
+      ></a>
+      <!-- <a routerLink="/messages" href="javascript:void(0)" headIcon chat><img src="../assets/images/chat.png" alt=""></a>
+        <div ritMore>
+          <span></span>
+        </div> -->
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div profilePage>
+    <div topPart>
+      <!-- <a href="javascript:void(0)" routerLink="/chat" msg><ion-icon name="chatbox"></ion-icon></a> -->
+      <span userImg><img src="../assets/images/user7.jpg" alt="" /></span>
+      <h4>Jennifer Lopez</h4>
+      <p>265 Platinum Dr <br />Hoschton, Georgia(GA), 30548</p>
+      <!-- <a href="javascript:void(0)" btn-edit>Edit Profile</a> -->
+      <!-- <ul>
+        <li><h6>510</h6><p>Posts</p></li>
+        <li><h6>2.4k</h6><p>Followers</p></li>
+        <li><h6>120</h6><p>Following</p></li>
+      </ul> -->
+      <ion-segment mode="md" [(ngModel)]="profile" segment>
+        <ion-segment-button value="posts">
+          <h6>Personal Details</h6>
+        </ion-segment-button>
+        <ion-segment-button value="followers">
+          <h6>Change Password</h6>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div botmPart [ngSwitch]="profile">
+      <!-- <form
+    class="fld-white"
+    [formGroup]="profileForm"
+    (ngSubmit)="onSubmit(profileForm.value)"
+  ></form> -->
+      <div *ngSwitchCase="'posts'">
+        <ul>
+          <li>
+            <label>Name</label><ion-input value="Jennifer Lopez"></ion-input>
+          </li>
+          <li>
+            <label>Email Address</label
+            ><ion-input value="jenilop02@gmail.com"></ion-input>
+          </li>
+          <li>
+            <label>Phone</label><ion-input value="+1 998 8888 0120"></ion-input>
+          </li>
+          <li>
+            <label>Address</label
+            ><ion-input
+              value="265 Platinum Dr Hoschton, Georgia(GA), 30548"
+            ></ion-input>
+          </li>
+        </ul>
+        <a href="javascript:void(0)" save>Save Changes</a>
+      </div>
+
+      <!-- followers -->
+      <div *ngSwitchCase="'followers'">
+        <ul>
+          <li><label>Old Password</label><ion-input></ion-input></li>
+          <li><label>New Password</label><ion-input></ion-input></li>
+          <li><label>Confirm New Password</label><ion-input></ion-input></li>
+        </ul>
+        <a href="javascript:void(0)" save>Submit</a>
+      </div>
+    </div>
+  </div>
+</ion-content>

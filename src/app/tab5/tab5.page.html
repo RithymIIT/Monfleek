@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+    <div headerFlex>
+      <ion-menu-button
+        ><div sideToggle><span></span><span></span><span></span></div
+      ></ion-menu-button>
+      <ion-title>Add Product</ion-title>
+      <!-- <a href="javascript:void(0)" headIcon><img src="../assets/images/pencil.png" alt=""></a>
+        <a routerLink="/messages" href="javascript:void(0)" headIcon chat><img src="../assets/images/chat.png" alt=""></a>
+        <div ritMore>
+          <span></span>
+        </div> -->
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form
+    class="fld-white"
+    [formGroup]="productForm"
+    (ngSubmit)="onSubmit(productForm.value)"
+  >
+    <div postPage>
+      <div imgCol>
+        <img src="../assets/images/image.png" alt="" />
+        <a href="javascript:void(0)" video
+          ><ion-icon name="camera" (click)="selectImage()"></ion-icon
+        ></a>
+      </div>
+
+      <ul>
+        <li>
+          <label>Product Title</label>
+          <ion-input formControlName="title" placeholder=""></ion-input>
+          <div *ngIf="submitted && form.title.errors" class="invalid-feedback">
+            <ion-text validationText *ngIf="form.title.errors.required">
+              <p>*Title is required!</p>
+            </ion-text>
+          </div>
+        </li>
+        <li>
+          <label>Description</label>
+          <ion-textarea formControlName="desc" placeholder=""></ion-textarea>
+          <div *ngIf="submitted && form.desc.errors" class="invalid-feedback">
+            <ion-text validationText *ngIf="form.desc.errors.required">
+              <p>*A Short Description is required!</p>
+            </ion-text>
+          </div>
+        </li>
+        <li>
+          <label>Price($)</label>
+          <ion-input
+            formControlName="price"
+            type="number"
+            placeholder="$"
+          ></ion-input>
+          <div *ngIf="submitted && form.price.errors" class="invalid-feedback">
+            <ion-text validationText *ngIf="form.price.errors.required">
+              <p>*Price of product is required!</p>
+            </ion-text>
+          </div>
+        </li>
+        <li>
+          <label>Quantity</label>
+          <ion-input
+            formControlName="qun"
+            type="number"
+            placeholder=""
+          ></ion-input>
+          <div *ngIf="submitted && form.qun.errors" class="invalid-feedback">
+            <ion-text validationText *ngIf="form.qun.errors.required">
+              <p>*Quantity is required!</p>
+            </ion-text>
+          </div>
+        </li>
+        <li>
+          <!-- <label>Select Category</label> -->
+          <ion-label>Categories</ion-label>
+          <ion-select
+            multiple
+            formControlName="categories"
+            placeholder="Select"
+            value=""
+          >
+            <ion-select-option
+              *ngFor="let cat of allCategories"
+              value="{{cat.id}}"
+              >{{cat.name}}</ion-select-option
+            >
+          </ion-select>
+          <div
+            *ngIf="submitted && form.categories.errors"
+            class="invalid-feedback"
+          >
+            <ion-text validationText *ngIf="form.categories.errors.required">
+              <p>*Select the category of product!</p>
+            </ion-text>
+          </div>
+        </li>
+        <!-- <li>
+      <ion-label>Hair</ion-label>
+        <ion-select multiple placeholder="Select" value="">
+          <ion-select-option value="m">Straight</ion-select-option>
+          <ion-select-option value="h">Wavy</ion-select-option>
+          <ion-select-option value="c">Curly</ion-select-option>
+          <ion-select-option value="na">Coily</ion-select-option>
+        </ion-select>
+    </li>
+    <li>
+      <ion-label>Nails</ion-label>
+        <ion-select placeholder="Select" value="">
+          <ion-select-option value="m">Common</ion-select-option>
+          <ion-select-option value="h">Roofing</ion-select-option>
+          <ion-select-option value="c">Masonry</ion-select-option>
+          <ion-select-option value="na">Drywall</ion-select-option>
+        </ion-select>
+    </li>
+    <li>
+      <ion-label>Makeup</ion-label>
+        <ion-select placeholder="Select" value="">
+          <ion-select-option value="bronzer">Bronzer</ion-select-option>
+          <ion-select-option value="conce">Concealer</ion-select-option>
+          <ion-select-option value="face">Face</ion-select-option>
+          <ion-select-option value="pri">Primer</ion-select-option>
+          <ion-select-option value="glue">Eyelash Glue</ion-select-option>
+          <ion-select-option value="pencil">Eyelash Pencils</ion-select-option>
+        </ion-select>
+    </li> -->
+        <li>
+          <button type="submit" save>Add Product</button>
+        </li>
+        <li>
+          <!-- <li>
+        <ion-label>Select Category</ion-label>
+        <ion-select placeholder="Select">
+          <ion-select-option value="f">One</ion-select-option>
+          <ion-select-option value="m">Two</ion-select-option>
+        </ion-select>
+      </li> -->
+        </li>
+      </ul>
+    </div>
+  </form>
+</ion-content>

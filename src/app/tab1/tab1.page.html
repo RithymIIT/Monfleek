@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+    <div headerFlex>
+      <ion-menu-button><div sideToggle><span></span><span></span><span></span></div></ion-menu-button>
+      
+      <ion-title>Products</ion-title>
+
+      <!-- <ion-icon name="search"></ion-icon> -->
+      <img (click)="showModal()" searchIcon src="../assets/images/search-icon.svg" alt="">
+      <!-- <div searchBar>
+        <ion-icon name="search"></ion-icon>
+        <ion-input placeholder="Search"></ion-input>
+      </div> -->
+      <!-- <a (click)="showModal2()" href="javascript:void(0)" filterToggle><ion-icon name="funnel-outline"></ion-icon></a> -->
+      <span userImg><img src="../assets/images/user5.jpg" alt="" /></span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div tabs>
+    <ion-segment scrollable mode="md" [(ngModel)]="categories" segment>
+      <ion-segment-button value="all">
+         All
+      </ion-segment-button>
+        <ion-segment-button value="lips">
+         Lips
+      </ion-segment-button>
+        <ion-segment-button value="skin">
+         Skin Care
+      </ion-segment-button>
+        <ion-segment-button value="face">
+         Face
+      </ion-segment-button>
+        <ion-segment-button value="hair">
+         Hair
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div shopPage [ngSwitch]="categories">
+
+    <div *ngSwitchCase="'all'">
+        <div proItem routerLink="/product-details">
+          <img proImg src="../assets/images/pro2.jpg" alt="">
+          <div ritArea>
+            <div topLogo>
+              <div brandLogo><span><img src="../assets/images/pro2.jpg" alt=""></span> <p>Lorem Care</p></div>
+            </div>
+            <div titlePrice>
+              <p>Doll Face</p>
+              <h4>$25.55</h4>
+            </div>
+            <div quantity>
+              <p>Quantity: <b>4</b></p>
+            </div>
+          </div>
+        </div>
+        <div proItem routerLink="/product-details">
+          <img proImg src="../assets/images/pro1.jpg" alt="">
+          <div ritArea>
+            <div topLogo>
+              <div brandLogo><span><img src="../assets/images/pro1.jpg" alt=""></span> <p>Lorem Care</p></div>
+            </div>
+            <div titlePrice>
+              <p>Doll Face</p>
+              <h4>$35.99</h4>
+            </div>
+            <div quantity>
+              <p>Quantity: <b>10</b></p>
+            </div>
+          </div>
+        </div>
+        <div proItem routerLink="/product-details">
+          <img proImg src="../assets/images/pro3.jpg" alt="">
+          <div ritArea>
+            <div topLogo>
+              <div brandLogo><span><img src="../assets/images/pro3.jpg" alt=""></span> <p>Lorem Care</p></div>
+            </div>
+            <div titlePrice>
+              <p>Doll Face</p>
+              <h4>$40.00</h4>
+            </div>
+            <div quantity>
+              <p>Quantity: <b>23</b></p>
+            </div>
+          </div>
+        </div>
+        <div proItem routerLink="/product-details">
+          <img proImg src="../assets/images/pro2.jpg" alt="">
+          <div ritArea>
+            <div topLogo>
+              <div brandLogo><span><img src="../assets/images/pro2.jpg" alt=""></span> <p>Lorem Care</p></div>
+            </div>
+            <div titlePrice>
+              <p>Doll Face</p>
+              <h4>$25.55</h4>
+            </div>
+            <div quantity>
+              <p>Quantity: <b>15</b></p>
+            </div>
+          </div>
+        </div>
+    </div>
+      
+  </div>  
+
+</ion-content>

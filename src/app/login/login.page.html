@@ -1,0 +1,67 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+    <div loginPage>
+      <div logo><img src="../assets/images/logo.png" alt="" /></div>
+
+      <div form>
+        <div formField>
+          <label>Phone Number</label>
+          <ion-input
+            placeholder="Phone Number"
+            value=""
+            type="number"
+            formControlName="phone"
+          ></ion-input>
+        </div>
+        <div *ngIf="submitted && form.phone.errors" class="invalid-feedback">
+          <ion-text validationText *ngIf="form.phone.errors.required">
+            <p>*Phone Number is required!</p>
+          </ion-text>
+          <ion-text validationText *ngIf="form.phone.errors.pattern">
+            <p>*Must be of 10 Digit!</p>
+          </ion-text>
+        </div>
+        <div formField>
+          <label>PASSWORD</label>
+          <ion-input
+            paswd
+            [type]="fieldTextType ? 'text' : 'password'"
+            placeholder="Password"
+            value=""
+            formControlName="password"
+          >
+          </ion-input>
+          <span viewPaswd (click)="togglePassword()">
+            <ion-icon [name]="fieldTextType? 'eye': 'eye-off-sharp'"></ion-icon>
+            <!-- <ion-icon name="fieldTextType? eye: eye-off-sharp" name="eye-off-sharp"></ion-icon> -->
+          </span>
+        </div>
+        <div *ngIf="submitted && form.password.errors" class="invalid-feedback">
+          <ion-text validationText *ngIf="form.password.errors.required">
+            <p>*Password is required!</p>
+          </ion-text>
+        </div>
+        <a href="javascript:void(0)" forgot>Forgot Password?</a>
+      </div>
+
+      <div fixedBotm>
+        <!-- <p center or>Or login with email</p>
+			<ul social>
+				<li><a href="javascript:void(0)"><img width="25" src="../assets/images/facebook.svg" alt=""></a></li>
+				<li><a href="javascript:void(0)"><ion-icon name="logo-google"></ion-icon></a></li>
+			</ul> -->
+        <button type="submit" btn-common block>Sign In</button>
+
+        <!-- <p center dont>Don't have an account?
+				<a routerLink="/signup" href="javascript:void(0)" link>Register</a>
+			</p> -->
+      </div>
+    </div>
+  </form>
+</ion-content>

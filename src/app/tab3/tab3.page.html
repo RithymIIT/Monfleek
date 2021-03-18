@@ -1,0 +1,170 @@
+<ion-header>
+  <ion-toolbar>
+    <div headerFlex>
+      <!-- <ion-button backBtn><ion-icon name="arrow-back"></ion-icon></ion-button> -->
+
+      <ion-menu-button><div sideToggle><span></span><span></span><span></span></div></ion-menu-button>
+      <ion-title>Notifications</ion-title>
+      <!-- <div searchBar>
+        <ion-icon name="search"></ion-icon>
+        <ion-input placeholder="Search"></ion-input>
+      </div> -->
+      <ion-icon name="search"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment mode="md" [(ngModel)]="noti" tabHead>
+    <ion-segment-button value="today">
+       Today
+    </ion-segment-button>
+      <ion-segment-button value="lweek">
+       Last week
+    </ion-segment-button>
+      <ion-segment-button value="lmonth">
+       Last month
+    </ion-segment-button>
+  </ion-segment>
+  <div notiPage [ngSwitch]="noti">
+    <div *ngSwitchCase="'today'">
+      <ul>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span online></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span offline></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span offline></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span online></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span offline></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span online></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div *ngSwitchCase="'lweek'">
+      <ul>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span online></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span offline></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span offline></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span online></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span offline></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span online></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div *ngSwitchCase="'lmonth'">
+      <ul>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span online></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span offline></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span offline></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span online></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span offline></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+        <li>
+          <div userImg><img src="../assets/images/user1.jpg" alt="" /><span online></span></div>
+          <div notiTxt>
+            <p>Jane doe commented on your product: "<b>'s interesting</b>"...</p>
+            <small>4m ago</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>  
+</ion-content>

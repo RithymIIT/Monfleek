@@ -1,0 +1,111 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <div headerFlex>
+      <ion-title>Shop</ion-title>
+      <div searchBar>
+        <ion-icon name="search"></ion-icon>
+        <ion-input placeholder="Search"></ion-input>
+      </div>
+      <a href="javascript:void(0)" routerLink="/cart" filterToggle><ion-icon name="cart"></ion-icon></a>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar>
+    <div headerFlex>
+      <ion-menu-button><div sideToggle><span></span><span></span><span></span></div></ion-menu-button>
+      <ion-title>Orders</ion-title>
+      
+      <!-- <a href="javascript:void(0)" routerLink="/cart" filterToggle><ion-icon name="cart"></ion-icon></a> -->
+      <!-- <ion-icon name="search"></ion-icon> -->
+      <!-- <div searchBar>
+        <ion-icon name="search"></ion-icon>
+        <ion-input placeholder="Search"></ion-input>
+      </div> -->
+      <!-- <a href="javascript:void(0)" filterToggle><ion-icon name="chevron-down-outline"></ion-icon></a> -->
+      
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div tabs>
+    <ion-segment mode="md" [(ngModel)]="categories" segment>
+      <ion-segment-button value="past">
+         Past Orders
+      </ion-segment-button>
+        <ion-segment-button value="upcoming">
+         Upcoming Orders
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div shopPage [ngSwitch]="categories">
+
+    <div *ngSwitchCase="'past'">
+      <div featured>
+        <div cartItems>
+          <ul>
+            <li>
+              <div lftCart routerLink="/order-details">
+                <span><img src="../assets/images/pro1.jpg" alt=""></span>
+                <div ml-auto fullWidth>
+                  <h6>#0221500 <small>QTY: 3</small></h6>
+                  <p>Etsu Skin Care<b>$25.50</b></p>
+                  <h5 date>2/10/2020</h5>
+                  <span userImg><img src="../assets/images/user7.jpg" alt=""> <p>John Smith</p></span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div lftCart routerLink="/order-details">
+                <span><img src="../assets/images/pro1.jpg" alt=""></span>
+                <div ml-auto fullWidth>
+                  <h6>#0221500 <small>QTY: 3</small></h6>
+                  <p>Etsu Skin Care<b>$25.50</b></p>
+                  <h5 date>2/10/2020</h5>
+                  <span userImg><img src="../assets/images/user7.jpg" alt=""> <p>John Smith</p></span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div lftCart routerLink="/order-details">
+                <span><img src="../assets/images/pro1.jpg" alt=""></span>
+                <div ml-auto fullWidth>
+                  <h6>#0221500 <small>QTY: 3</small></h6>
+                  <p>Etsu Skin Care<b>$25.50</b></p>
+                  <h5 date>2/10/2020</h5>
+                  <span userImg><img src="../assets/images/user7.jpg" alt=""> <p>John Smith</p></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'upcoming'">
+      <div featured>
+        <div cartItems>
+          <ul>
+            <li>
+              <div lftCart routerLink="/upcoming-order-details">
+                <span><img src="../assets/images/pro1.jpg" alt=""></span>
+                <div ml-auto fullWidth>
+                  <h6>#0221500 <small>QTY: 3</small></h6>
+                  <p>Etsu Skin Care<b>$25.50</b></p>
+                  <h5 date>2/10/2020</h5>
+                  <span userImg><img src="../assets/images/user7.jpg" alt=""> <p>John Smith</p></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+      
+  </div>  
+
+</ion-content>
